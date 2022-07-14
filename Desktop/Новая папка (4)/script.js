@@ -1,27 +1,14 @@
-const calculator = {
-    res: document.querySelector('#res'),
-    sum: function () {
-        let a = document.querySelector('#a');
-        let b = document.querySelector('#b');
+function getResult(x, y) {
+    let result=0;
+    let pow = Math.pow(x, y);
+    let powString = String(pow);
 
-        this.show(+a.value + +b.value);
-    },
-    mult: function () {
-        let a = document.querySelector('#a');
-        let b = document.querySelector('#b');
-
-        this.show(+a.value * +b.value);
-    },
-    show: function (result) {
-        this.res.value = result;
-    },
-    init: function () {
-        document.querySelector('#sum').addEventListener('click', () => this.sum());
-        document.querySelector('#mult').addEventListener('click',() => this.mult());
-
-        this.sum();
-        this.mult();
+    for (let i = 0; i < powString.length; i++) {
+        
+        result += +powString[i];
     }
+    console.log(pow);
+    
+      return result;
 }
-
-calculator.init();
+console.log(getResult(4, 8));
